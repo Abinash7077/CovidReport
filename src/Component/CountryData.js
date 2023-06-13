@@ -48,8 +48,8 @@ const CountryData = () => {
           <th className="text-[18px] border-r-2 border-slate-700 py-2 text-slate-700 ">Country</th>
           
           <th className="text-[18px] border-r-2 border-slate-700 py-2 text-slate-700 ">Population</th>
-          <th className="text-[18px] border-r-2 border-slate-700 py-2 text-slate-700 ">Total Cases</th>
-          <th className="text-[18px]  py-2 text-slate-700 ">Death Case</th>
+          <th className="text-[18px] border-r-2 border-slate-700 py-2 text-slate-700 ">Total Death</th>
+          <th className="text-[18px]  py-2 text-slate-700 ">Total Case</th>
         </tr></thead>
         
         
@@ -63,9 +63,9 @@ const CountryData = () => {
                  <tr className={`text-center border-2 shadow-lg  ${item.clr} `} key={item.continent}>
              <td className="text-[16px] py-3  font-400 md:text-[16px]">{item.continent}</td>
               <td className="text-[16px] py-3  font-400 md:text-[16px]">{item.country}</td>
-              <td className="text-[16px] py-3  font-400 md:text-[16px]">{item.cases.total}</td>
+              <td className="text-[16px] py-3  font-400 md:text-[16px]">{item.population}</td>
               <td className="text-[16px] py-3  font-400 md:text-[16px]">{item.deaths.total}</td>
-              <td className="text-[16px] py-3  font-400 md:text-[16px]">{item.cases.recovered}</td>
+              <td className="text-[16px] py-3  font-400 md:text-[16px]">{item.cases.total}</td>
               </tr></>:""
             }
           
