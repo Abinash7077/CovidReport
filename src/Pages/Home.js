@@ -41,7 +41,8 @@ const Home = () => {
       <h1 className="text-center font-sans font-semibold hover:text-orange-700 text-[20px] sm:text-[28px] lg:text-[35px] xl:text-[35px]">
         Covid19 Report Continent and country wise
       </h1>
-      <div className="w-[80%] mt-4 mx-auto h-[450px] border-2 shadow-lg">
+      <div className="w-[80%] mt-4 mx-auto h-fit
+       border-2 shadow-lg">
         <div className="w-full  my-2">
             {
                 data.map((item)=>(
