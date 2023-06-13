@@ -7,8 +7,7 @@ const CountryData = () => {
   const newName=useSelector((state)=>state.dispatchName)
  
   const[data,setData]=useState("")
-  const[page,setPage]=useState(1)
-  const[postPerPage,setPostPerPage]=useState(10)
+  
  
   const [statistics, setStatistics] = useState([]);
 
@@ -30,11 +29,7 @@ const CountryData = () => {
       console.error('Error fetching COVID-19 statistics:', error);
     }
   };
-  const selectPageHandler=(selectPage)=>{
-    if(selectPage>=1 && selectPage<=statistics.length/5 && selectPage!= page)
-    setPage(selectPage)
-  }
-  console.log((statistics))
+  
   /* fetch done */
   
  
@@ -59,16 +54,20 @@ const CountryData = () => {
         
        <tbody>
           {statistics.filter((item)=>{
-            return data.slice(page*10-10,page*10).toLowerCase()===''?item:item.country.toLowerCase().includes(data) 
+            return data.toLowerCase()===''?item:item.country.toLowerCase().includes(data) 
           }).map((item) => (
             <>
-             <tr className={`text-center border-2 shadow-lg  ${item.clr} `} key={item.continent}>
+            {
+              newName._name===item.continent?<>
+                 <tr className={`text-center border-2 shadow-lg  ${item.clr} `} key={item.continent}>
              <td className="text-[16px] py-3  font-400 md:text-[16px]">{item.continent}</td>
               <td className="text-[16px] py-3  font-400 md:text-[16px]">{item.country}</td>
               <td className="text-[16px] py-3  font-400 md:text-[16px]">{item.cases.total}</td>
               <td className="text-[16px] py-3  font-400 md:text-[16px]">{item.deaths.total}</td>
               <td className="text-[16px] py-3  font-400 md:text-[16px]">{item.cases.recovered}</td>
-              </tr>
+              </tr></>:""
+            }
+          
               
             </>
           ))}
