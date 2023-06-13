@@ -24,7 +24,7 @@ const Home = () => {
     },
     {
       id: 5,
-      name: "South America",
+      name: "South-America",
     },
     {
       id: 6,

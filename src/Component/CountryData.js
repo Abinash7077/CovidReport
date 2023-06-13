@@ -29,6 +29,7 @@ const CountryData = () => {
       console.error('Error fetching COVID-19 statistics:', error);
     }
   };
+  console.log(statistics)
   
   /* fetch done */
   
